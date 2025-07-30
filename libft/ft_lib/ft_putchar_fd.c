@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/13 02:24:07 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:12:44 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+void	ft_putchar_fd(char c, int fd)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
-
-#endif
+	write(fd, &c, 1);
+}

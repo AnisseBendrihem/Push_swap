@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/13 02:12:46 by xx                #+#    #+#             */
+/*   Updated: 2025/07/28 02:13:14 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	char			*result;
+	unsigned int	i;
 
-#endif
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	result = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}

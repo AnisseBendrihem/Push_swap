@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/04/28 16:46:36 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:11:59 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+int	ft_isalnum(int nc)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
-
-#endif
+	if ((nc >= '0' && nc <= '9') || (nc >= 'a' && nc <= 'z')
+		|| (nc >= 'A' && nc <= 'Z'))
+		return (1);
+	else
+		return (0);
+}

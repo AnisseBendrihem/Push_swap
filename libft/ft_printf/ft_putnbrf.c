@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbrf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/27 16:09:26 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 01:11:49 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+int	ft_putnbrf(int n)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	unsigned int	nb;
+	int				count;
 
-#endif
+	count = 0;
+	if (n < 0)
+	{
+		count += ft_putcharf('-');
+		n = -n;
+	}
+	nb = n;
+	if (nb >= 10)
+	{
+		count += ft_putnbrf(nb / 10);
+	}
+	count += ft_putcharf(nb % 10 + '0');
+	return (count);
+}

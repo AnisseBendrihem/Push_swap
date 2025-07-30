@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/04/28 17:12:58 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:12:07 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+int	ft_isprint(int a)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
-
-#endif
+	if (a < 32 || a > 126)
+		return (0);
+	else
+		return (1);
+}

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/01 17:19:32 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:12:34 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	size_t			i;
+	unsigned char	*cs1;
+	unsigned char	*cs2;
 
-#endif
+	cs1 = (unsigned char *)s1;
+	cs2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (cs1[i] != cs2[i])
+			return (cs1[i] - cs2[i]);
+		i++;
+	}
+	return (0);
+}

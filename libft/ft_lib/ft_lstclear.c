@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/15 21:15:40 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/29 23:38:15 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	t_list	*mouv;
+	t_list	*recip;
 
-#endif
+	if (!lst)
+		return ;
+	mouv = *lst;
+	while (mouv)
+	{
+		recip = mouv->next;
+		if (del)
+			del(mouv->content);
+		free(mouv);
+		mouv = recip;
+	}
+	*lst = (NULL);
+}

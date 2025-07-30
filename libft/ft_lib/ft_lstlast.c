@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/15 20:44:58 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:12:23 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+t_list	*ft_lstlast(t_list *lst)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	t_list	*mouv;
 
-#endif
+	if (!lst)
+		return (NULL);
+	mouv = lst;
+	while (mouv->next)
+	{
+		mouv = mouv->next;
+	}
+	return (mouv);
+}

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/01 14:34:13 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:13:26 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+char	*ft_strchr(char *s, int c)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	int	i;
 
-#endif
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		if (c == s[i])
+			return (&s[i]);
+		i++;
+	}
+	if (c == '\0')
+		return (&s[i]);
+	return (0);
+	if (!s)
+		return (0);
+}

@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/05/19 20:49:34 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 01:15:09 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+int	ft_printf(const char *str, ...)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	va_list	args;
+	int		last_count;
+	int		i;
 
-#endif
+	if (!str)
+	{
+		return (-1);
+	}
+	i = 0;
+	last_count = 0;
+	va_start(args, str);
+	while (str[i])
+	{
+		if (str[i] == '%')
+		{
+			last_count += ft_convertf(str[i + 1], args);
+			i++;
+		}
+		else
+		{
+			last_count += ft_putcharf(str[i]);
+		}
+		i++;
+	}
+	return (last_count);
+}

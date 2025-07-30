@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 05:57:35 by abendrih         ###   ########.fr       */
+/*   Created: 2025/04/29 20:58:18 by abendrih          #+#    #+#             */
+/*   Updated: 2025/07/28 02:12:40 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	size_t				i;
+	const unsigned char	*str;
+	unsigned char		*dtr;
 
-#endif
+	i = len;
+	str = (const unsigned char *)src;
+	dtr = (unsigned char *) dst;
+	if (dst == 0 && str == 0)
+		return (0);
+	if (dtr > str)
+	{
+		while (i > 0)
+		{
+			i--;
+			dtr[i] = str[i];
+		}
+	}
+	else
+		ft_memcpy(dtr, str, len);
+	return (dst);
+}
