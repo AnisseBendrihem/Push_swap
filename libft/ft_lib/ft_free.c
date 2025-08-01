@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/01 07:48:13 by abendrih         ###   ########.fr       */
+/*   Created: 2025/08/01 04:55:33 by abendrih          #+#    #+#             */
+/*   Updated: 2025/08/01 04:55:49 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_stack_node
+void	ft_free(char **tab)
 {
-	long					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
+	int i;
 
-#endif
+	i = 0;
+	if (!tab)
+		return ;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}

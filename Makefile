@@ -6,7 +6,7 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/07/30 05:51:08 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/01 02:22:30 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ MATRIX_GREEN= \033[38;5;46m
 
 MATRIX_CODE = "\n\
 $(MATRIX_GREEN)\
-01010000 01010101 01010011 01001000 01011111 01010011 01010111 01000001 01010000\n\n\
 > Initializing stack sequences...\n\
 > Injecting LIBFT Core [OK]\n\
 > Algorithmic brain connected.\n\

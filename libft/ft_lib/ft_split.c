@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 23:33:15 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/28 02:12:54 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/01 04:55:18 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,6 @@ static char	*buffer_words(const char *s, int c, int *j)
 	return (recip);
 }
 
-static void	liberez_split(char **tab)
-{
-	int	i;
-
-	i = 0;
-	if (!tab)
-		return ;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
-
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
@@ -94,7 +79,7 @@ char	**ft_split(const char *s, char c)
 		tab[i] = buffer_words(s, c, &j);
 		if (!tab[i])
 		{
-			liberez_split(tab);
+			ft_free(tab);
 			return (NULL);
 		}
 		i++;

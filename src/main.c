@@ -6,39 +6,31 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/30 06:14:21 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/01 08:05:58 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include "libft.h"
-#include <stdio.h>
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	ft_printf("Hello frome the Push Swap\n");
+	t_stack_node	*a;
+	t_stack_node	*b;
+
+	a = NULL;
+	b = NULL;
+	if (!parse_arguments(ac, av, &a) || doublon(a))
+	{
+		ft_free(&a);
+		write(1, "Error\n", 6);
+		return (1);
+	}
+	if (!already_sorted(a))
+	{
+		sort(a, b);
+	}
 	return (0);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	t_stack_node	*a;
-// 	t_stack_node	*b;
-
-// 	a = NULL;
-// 	b = NULL;
-// 	if (!parse_arguments(ac, av, &a) || doublon(a))
-// 	{
-// 		ft_free(&a);
-// 		write(1, "Error\n", 6);
-// 		return (1);
-// 	}
-// 	if (!already_sorted(a))
-// 	{
-// 		sort(a, b);
-// 	}
-// 	return (0);
-// }
 
 /** TURK ALGO
 
