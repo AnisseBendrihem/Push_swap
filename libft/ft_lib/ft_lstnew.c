@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 23:09:24 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/28 02:12:27 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:41:47 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_stack_node	*ft_lstnew(long value)
 {
-	t_list	*key;
+	t_stack_node	*key;
 
-	key = malloc(sizeof(t_list));
+	key = malloc(sizeof(t_stack_node));
 	if (!key)
 		return (NULL);
-	key->content = content;
+	key->value = value;
 	key->next = NULL;
 	return (key);
 }

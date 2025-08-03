@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:44:58 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/28 02:12:23 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:39:44 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack_node	*ft_lstlast(t_stack_node *lst)
 {
-	t_list	*mouv;
+	t_stack_node	*mouv;
 
 	if (!lst)
 		return (NULL);

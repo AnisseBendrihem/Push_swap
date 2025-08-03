@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 21:15:40 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/29 23:38:15 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:42:35 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_stack_node **lst)
 {
-	t_list	*mouv;
-	t_list	*recip;
+	t_stack_node	*recip;
+	t_stack_node	*key;
 
-	if (!lst)
+	if (!lst || !*lst)
 		return ;
-	mouv = *lst;
-	while (mouv)
+	key = *lst;
+	while (key)
 	{
-		recip = mouv->next;
-		if (del)
-			del(mouv->content);
-		free(mouv);
-		mouv = recip;
+		recip = key;
+		key = key->next;
+		free(recip);
 	}
 	*lst = (NULL);
 }

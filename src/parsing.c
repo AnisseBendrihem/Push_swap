@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 17:57:02 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/01 08:31:27 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 22:41:53 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ int	all_are_valid(char **tab)
 
 int	fill_and_size_of_stack(char **tab, t_stack_node **a)
 {
-	int	i;
-	int	tmp;
+	int		i;
+	long	tmp;
 
 	i = 0;
 	tmp = 0;
@@ -143,8 +143,7 @@ int	is_sorted(t_stack_node *a)
 	}
 	return (1);
 }
-// a faire fox atol
-// fix lst clear et le comprendre
+
 // crer la fonction cerveau qui link tou ca et la call dans le main
 // corriger les regles sa ect..
 // commencer le tri

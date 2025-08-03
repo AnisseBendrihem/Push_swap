@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 22:05:54 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/28 02:12:21 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:41:17 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_stack_node *lst, void (*f)(void *))
 {
-	t_list	*mouv;
+	t_stack_node	*mouv;
 
 	if (!lst || !f)
 		return ;
 	mouv = lst;
 	while (mouv)
 	{
-		f(mouv->content);
+		f(mouv->value);
 		mouv = mouv->next;
 	}
 }

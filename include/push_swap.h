@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/01 07:48:13 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/03 23:40:12 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
-typedef struct s_stack_node
-{
-	long					value;
-	struct s_stack_node	*next;
-}						t_stack_node;
 
 #endif
