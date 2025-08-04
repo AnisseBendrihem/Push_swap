@@ -6,7 +6,7 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/01 02:22:30 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/04 03:30:56 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC         = $(SRC_DIR)/main.c \
 OBJ         = $(SRC:.c=.o)
 
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -g3
 
 # ┌─────────────────────────────┐
 # │          COULEURS           │

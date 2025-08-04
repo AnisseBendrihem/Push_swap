@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/01 08:05:58 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/04 03:03:11 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
-	t_stack_node	*b;
 
 	a = NULL;
-	b = NULL;
-	if (!parse_arguments(ac, av, &a) || doublon(a))
+	if (ac < 2)
 	{
-		ft_free(&a);
-		write(1, "Error\n", 6);
-		return (1);
+		printf("Error : No argument\n");
+		return (0);
 	}
-	if (!already_sorted(a))
+	if (!mother_parcing(ac, av, &a))
 	{
-		sort(a, b);
+		ft_printf("Lets Start !!");
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:53:37 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/03 23:39:17 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/04 03:43:13 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new)
 {
-	t_stack_node	*mouv;
+	t_stack_node	*key;
 
 	if (!new)
 		return ;
@@ -23,10 +23,10 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new)
 		*lst = new;
 		return ;
 	}
-	mouv = *lst;
-	while (mouv->next)
+	key = *lst;
+	while (key->next)
 	{
-		mouv = mouv->next;
+		key = key->next;
 	}
-	mouv->next = new;
+	key->next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/03 23:40:23 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/04 02:58:33 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,19 +122,15 @@ void					ft_putnbr_fd(int n, int fd);
 /* ************************************************************************** */
 
 /* Création et Manipulation des Maillons */
-t_list					*ft_lstnew(void *content);
-void					ft_lstadd_front(t_list **lst, t_list *new);
-void					ft_lstadd_back(t_list **lst, t_list *new);
-int						ft_lstsize(t_list *lst);
-t_list					*ft_lstlast(t_list *lst);
+t_stack_node			*ft_lstnew(long value);
+void					ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
+void					ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
+int						ft_lstsize(t_stack_node *lst);
+t_stack_node			*ft_lstlast(t_stack_node *lst);
 
 /* Suppression et Nettoyage */
-void					ft_lstdelone(t_list *lst, void (*del)(void *));
-void					ft_lstclear(t_list **lst, void (*del)(void *));
-void					ft_lstiter(t_list *lst, void (*f)(void *));
-t_list					*ft_lstmap(t_list *lst, void *(*f)(void *),
-							void (*del)(void *));
-
+void					ft_lstclear(t_stack_node **lst);
+void					ft_lstiter(t_stack_node *lst, void (*f)(void *));
 /* ************************************************************************** */
 /*                             ft_printf - Affichage                          */
 /* ************************************************************************** */
