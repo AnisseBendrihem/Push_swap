@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/04 02:58:33 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 00:54:47 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 
 typedef struct s_stack_node
 {
-	long				value;
+	int					value;
 	struct s_stack_node	*next;
 }						t_stack_node;
 
@@ -71,7 +71,7 @@ int						ft_isprint(int c);
 int						ft_toupper(int c);
 int						ft_tolower(int c);
 int						ft_atoi(const char *str);
-int						ft_atol(const char *str);
+long					ft_atol(const char *str);
 char					*ft_itoa(int n);
 
 /* ************************************************************************** */

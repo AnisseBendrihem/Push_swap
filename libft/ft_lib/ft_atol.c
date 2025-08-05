@@ -6,17 +6,17 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 21:40:09 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/03 21:40:56 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 00:50:50 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	size_t	i;
-	long		signe;
-	long		result;
+	size_t i;
+	long signe;
+	long result;
 
 	i = 0;
 	signe = 1;

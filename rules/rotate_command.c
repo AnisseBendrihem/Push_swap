@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:30:45 by abendrih          #+#    #+#             */
-/*   Updated: 2025/07/26 07:29:33 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 00:21:29 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	sb(t_stack_node **b)
 	t_stack_node	*second;
 
 	if (!*b || !(*b)->next)
-		first = *b;
+		return ;
+	first = *b;
 	second = (*b)->next;
 	first->next = second->next;
 	second->next = *b;

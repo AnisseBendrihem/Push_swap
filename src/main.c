@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/04 03:03:11 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 00:58:29 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 	if (!mother_parcing(ac, av, &a))
 	{
 		ft_printf("Lets Start !!");
+		// algorithme
 	}
 	return (0);
 }
