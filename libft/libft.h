@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 00:54:47 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 03:06:25 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void					ft_putnbr_fd(int n, int fd);
 /* ************************************************************************** */
 
 /* Création et Manipulation des Maillons */
-t_stack_node			*ft_lstnew(long value);
+t_stack_node			*ft_lstnew(int value);
 void					ft_lstadd_front(t_stack_node **lst, t_stack_node *new);
 void					ft_lstadd_back(t_stack_node **lst, t_stack_node *new);
 int						ft_lstsize(t_stack_node *lst);

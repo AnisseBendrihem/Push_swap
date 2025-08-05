@@ -6,11 +6,15 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 00:58:29 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 08:57:15 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+
+// tester les regles et les orgaaniser au propre ainsi que le parsing
+// commencer le tri
 
 int	main(int ac, char **av)
 {
@@ -29,6 +33,52 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+
+// int	main(void)
+// {
+// 	t_stack_node	*a;
+// 	t_stack_node	*key;
+// 	t_stack_node	*b;
+
+// 	a = NULL;
+// 	b = NULL;
+// 	ft_lstadd_back(&a, ft_lstnew(1));
+// 	ft_lstadd_back(&a, ft_lstnew(2));
+// 	ft_lstadd_back(&a, ft_lstnew(3));
+// 	ft_lstadd_back(&b, ft_lstnew(4));
+// 	ft_lstadd_back(&b, ft_lstnew(5));
+// 	ft_lstadd_back(&b, ft_lstnew(6));
+// 	key = a;
+// 	printf("liste a : \n");
+// 	while (key)
+// 	{
+// 		printf("%d\n", key->value);
+// 		key = key->next;
+// 	}
+// 	printf("liste b : \n");
+// 	key = b;
+// 	while (key)
+// 	{
+// 		printf("%d\n", key->value);
+// 		key = key->next;
+// 	}
+// 	printf("Apres la commande\n");
+// 	rr(&a, &b);
+// 	printf("liste a : \n");
+// 	key = a;
+// 	while (key)
+// 	{
+// 		printf("%d\n", key->value);
+// 		key = key->next;
+// 	}
+// 	printf("liste b : \n");
+// 	key = b;
+// 	while (key)
+// 	{
+// 		printf("%d\n", key->value);
+// 		key = key->next;
+// 	}
+// }
 
 /** TURK ALGO
 
@@ -98,7 +148,8 @@ LINKED LIST
 - value in int
 - index in int
 - target in Node*
-- bool isAboveMedian = check if (value > medianOfAllNumbers), depend on value
+- bool isAboveMedian = check if (value > medianOfAllNumbers),
+	depend on value
 - bool IsInUpperHalfOFCurrentStack = check if is currently in the upper half of a stack,
 	depend on index
 - next

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 17:57:02 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 01:18:27 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 08:56:29 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,4 @@ int	mother_parcing(int ac, char **av, t_stack_node **a)
 	return (0);
 }
 
-// corriger les regles sa ect..
-// commencer le tri
+

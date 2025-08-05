@@ -6,7 +6,7 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/04 03:30:56 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/05 06:35:38 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ LIBFT_LIB   = $(LIBFT_DIR)/libft.a
 SRC         = $(SRC_DIR)/main.c \
               $(SRC_DIR)/parsing.c \
               $(SRC_DIR)/push_swap.c \
-              $(RULES_DIR)/rotate_command.c \
-              $(RULES_DIR)/reverse_r_commande.c
+              $(RULES_DIR)/command.c \
+              $(RULES_DIR)/short_command.c \
 
 OBJ         = $(SRC:.c=.o)
 
