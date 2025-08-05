@@ -6,14 +6,13 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 08:57:15 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 23:01:50 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-// tester les regles et les orgaaniser au propre ainsi que le parsing
+// coder le tri 2 3 4 5
 // commencer le tri
 
 int	main(int ac, char **av)
@@ -23,7 +22,7 @@ int	main(int ac, char **av)
 	a = NULL;
 	if (ac < 2)
 	{
-		printf("Error : No argument\n");
+		ft_printf("Error : No argument\n");
 		return (0);
 	}
 	if (!mother_parcing(ac, av, &a))

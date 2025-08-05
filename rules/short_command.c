@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   short_commend.c                                    :+:      :+:    :+:   */
+/*   short_command.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 18:09:56 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 08:44:48 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/05 22:19:55 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ void	rr(t_stack_node **a, t_stack_node **b)
 // Le dernier élément devient le premier.
 // Avant : a → [1] → [2] → [3]
 // Après : a → [3] → [1] → [2]
-
 void	rra(t_stack_node **a)
 {
 	reverse_rotate_node(a);

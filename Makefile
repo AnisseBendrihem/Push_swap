@@ -6,32 +6,45 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/05 06:35:38 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/05 21:50:08 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = push_swap
 
+# ┌─────────────────────────────┐
+# │         REPERTOIRES          │
+# └─────────────────────────────┘
 SRC_DIR     = src
+PARSING_DIR = parsing
 RULES_DIR   = rules
 INCLUDE_DIR = include
 LIBFT_DIR   = libft
+
 LIBFT_MAKE  = $(LIBFT_DIR)/Makefile
 LIBFT_LIB   = $(LIBFT_DIR)/libft.a
 
-SRC         = $(SRC_DIR)/main.c \
-              $(SRC_DIR)/parsing.c \
-              $(SRC_DIR)/push_swap.c \
-              $(RULES_DIR)/command.c \
-              $(RULES_DIR)/short_command.c \
+# ┌─────────────────────────────┐
+# │           SOURCES            │
+# └─────────────────────────────┘
+SRC         = \
+	$(SRC_DIR)/main.c \
+	$(SRC_DIR)/push_swap.c \
+	$(PARSING_DIR)/parsing_1.c \
+	$(PARSING_DIR)/parsing_2.c \
+	$(RULES_DIR)/command.c \
+	$(RULES_DIR)/short_command.c
 
 OBJ         = $(SRC:.c=.o)
 
+# ┌─────────────────────────────┐
+# │         COMPILATION          │
+# └─────────────────────────────┘
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror -g3
+CFLAGS      = -Wall -Wextra -Werror -g3 -I$(INCLUDE_DIR) -I$(LIBFT_DIR)
 
 # ┌─────────────────────────────┐
-# │          COULEURS           │
+# │          COULEURS            │
 # └─────────────────────────────┘
 RESET       = \033[0m
 GREEN       = \033[0;32m
@@ -63,9 +76,8 @@ Purging temporals...\n\
 $(RESET)"
 
 # ┌─────────────────────────────┐
-# │          COMMANDES          │
+# │          COMMANDES           │
 # └─────────────────────────────┘
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -76,7 +88,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@echo "$(CYAN)Compiling$(RESET) $<"
-	@$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(MAKE) -C $(LIBFT_DIR) clean --no-print-directory
