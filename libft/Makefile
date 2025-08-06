@@ -6,7 +6,7 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 20:38:49 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/04 02:59:43 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/06 00:50:34 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME) $(EXEC)
-	@echo "$(NEON_PINK)💥 LIBRARY core fully erased.$(RESET)"
+	@echo "$(NEON_PINK)LIBRARY core fully erased.$(RESET)"
 
 re: fclean all
 

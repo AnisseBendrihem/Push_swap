@@ -6,12 +6,11 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/05 21:50:08 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/06 02:35:39 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = push_swap
-
 # ┌─────────────────────────────┐
 # │         REPERTOIRES          │
 # └─────────────────────────────┘
@@ -21,7 +20,6 @@ RULES_DIR   = rules
 INCLUDE_DIR = include
 LIBFT_DIR   = libft
 
-LIBFT_MAKE  = $(LIBFT_DIR)/Makefile
 LIBFT_LIB   = $(LIBFT_DIR)/libft.a
 
 # ┌─────────────────────────────┐
@@ -30,10 +28,13 @@ LIBFT_LIB   = $(LIBFT_DIR)/libft.a
 SRC         = \
 	$(SRC_DIR)/main.c \
 	$(SRC_DIR)/push_swap.c \
+	$(SRC_DIR)/utils.c\
 	$(PARSING_DIR)/parsing_1.c \
 	$(PARSING_DIR)/parsing_2.c \
-	$(RULES_DIR)/command.c \
-	$(RULES_DIR)/short_command.c
+	$(RULES_DIR)/push_command.c \
+	$(RULES_DIR)/rotate_command.c \
+	$(RULES_DIR)/r_rotate_command.c \
+	$(RULES_DIR)/swap_command.c 
 
 OBJ         = $(SRC:.c=.o)
 
@@ -41,7 +42,7 @@ OBJ         = $(SRC:.c=.o)
 # │         COMPILATION          │
 # └─────────────────────────────┘
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror -g3 -I$(INCLUDE_DIR) -I$(LIBFT_DIR)
+CFLAGS      = -Wall -Wextra -Werror -g3
 
 # ┌─────────────────────────────┐
 # │          COULEURS            │
@@ -50,8 +51,6 @@ RESET       = \033[0m
 GREEN       = \033[0;32m
 YELLOW      = \033[0;33m
 RED         = \033[0;31m
-BLUE        = \033[0;34m
-PURPLE      = \033[0;35m
 CYAN        = \033[0;36m
 MATRIX_GRAY = \033[38;5;246m
 MATRIX_GREEN= \033[38;5;46m
@@ -68,11 +67,12 @@ $(MATRIX_GREEN)\
 $(RESET)"
 
 MATRIX_CLEAN = "\n\
-$(MATRIX_GRAY)\
-Purging temporals...\n\
-  [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%\n\
-  ALL OBJECTS NEUTRALIZED.\n\
-  PUSH_SWAP REACTOR OFFLINE.\n\
+\033[38;5;93m╔════════════════════════════════════╗\n\
+\033[38;5;93m║ \033[38;5;51mPurging temporals...\033[0m               \033[38;5;93m║\n\
+\033[38;5;93m║ \033[38;5;51m[▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] \033[38;5;198m100%%\033[0m         \033[38;5;93m║\n\
+\033[38;5;93m║ \033[38;5;201mAll objects neutralized\033[0m            \033[38;5;93m║\n\
+\033[38;5;93m║ \033[38;5;51mPush_Swap Reactor Offline\033[0m          \033[38;5;93m║\n\
+\033[38;5;93m╚════════════════════════════════════╝\n\
 $(RESET)"
 
 # ┌─────────────────────────────┐
@@ -81,7 +81,7 @@ $(RESET)"
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory
+	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory 2>&1 | grep -v '^gcc'
 	@echo "$(GREEN)Linking with LIBFT...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT_LIB)
 	@echo $(MATRIX_CODE)

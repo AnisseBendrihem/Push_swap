@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:29:34 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 23:00:55 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/06 03:40:57 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	is_valid_number(const char *s)
 
 int	all_are_valid(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!tab)

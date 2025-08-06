@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 03:06:25 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/06 02:44:29 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@
 typedef struct s_stack_node
 {
 	int					value;
+	int					index;
 	struct s_stack_node	*next;
 }						t_stack_node;
 

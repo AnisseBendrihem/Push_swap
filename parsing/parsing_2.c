@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 17:57:02 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 23:04:49 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/06 03:41:17 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	fill_stack_and_check_overflow(char **tab, t_stack_node **a)
 		if (!security)
 			return (ft_lstclear(a), 0);
 		ft_lstadd_back(a, security);
+		lst_set_index(a);
 		i++;
 	}
 	return (i);
@@ -74,7 +75,6 @@ int	is_sorted(t_stack_node **a)
 			return (0);
 		key = key->next;
 	}
-	// ft_printf("All number are sorted !!\n");
 	ft_lstclear(a);
 	return (1);
 }
