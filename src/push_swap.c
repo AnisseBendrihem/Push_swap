@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/06 03:43:09 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:38:35 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 		sort_4(a, b);
 	else if (i == 5)
 		sort_5(a, b);
-	// else
-	// 	ft_ultimate_sort(a, b);
+	else
+		ft_ultimate_sort(a, b);
 	ft_lstclear(a);
 	ft_lstclear(b);
 }

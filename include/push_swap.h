@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:46 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/06 03:21:32 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:55:44 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,13 @@ void	push_swap(t_stack_node **a, t_stack_node **b);
 void	sort_3(t_stack_node **a);
 void	sort_4(t_stack_node **a, t_stack_node **b);
 void	sort_5(t_stack_node **a, t_stack_node **b);
+
+// utils
+void	sort_int_tab(int *tab, unsigned int size);
+void	lst_to_tab(t_stack_node **src, int *dest);
+void	fill_index_sorted(t_stack_node **a);
+int		lst_find_min(t_stack_node *stack);
+void	lst_set_index(t_stack_node **stack);
+int		lst_position(t_stack_node *stack, int value);
 
 #endif
