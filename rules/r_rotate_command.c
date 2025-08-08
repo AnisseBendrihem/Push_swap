@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 23:31:25 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 23:34:01 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 13:56:39 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 void	reverse_rotate_node(t_stack_node **stack)
 {
-	t_stack_node	*second_to_last;
+	t_stack_node	*before;
 	t_stack_node	*last;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	second_to_last = NULL;
-	last = *stack;
-	while (last->next)
-	{
-		second_to_last = last;
-		last = last->next;
-	}
-	second_to_last->next = NULL;
+	last = ft_lstlast(*stack);
+	before = last->prev;
+	before->next = NULL;
+	(*stack)->prev = last;
 	last->next = *stack;
+	last->prev = NULL;
 	*stack = last;
 }
 

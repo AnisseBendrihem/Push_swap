@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 23:30:32 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/05 23:35:26 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 13:31:28 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,23 @@ void	swap_node(t_stack_node **stack)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;
+	t_stack_node	*third;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-	first->next = second->next;
+	third = second->next;
+	if (third)
+	{
+		third->prev = first;
+		first->next = third;
+	}
+	else
+		first->next = NULL;
 	second->next = first;
+	first->prev = second;
+	second->prev = NULL;
 	*stack = second;
 }
 

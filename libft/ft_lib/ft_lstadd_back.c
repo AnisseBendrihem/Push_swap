@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:53:37 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/04 03:43:13 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 08:19:33 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ void	ft_lstadd_back(t_stack_node **lst, t_stack_node *new)
 	if (!*lst)
 	{
 		*lst = new;
+		new->prev = NULL;
+		new->next = NULL;
 		return ;
 	}
 	key = *lst;
 	while (key->next)
-	{
 		key = key->next;
-	}
 	key->next = new;
+	new->prev = key;
+	new->next = NULL;
 }

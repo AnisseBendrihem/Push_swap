@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 20:44:58 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/03 23:39:44 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 07:49:26 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_stack_node	*ft_lstlast(t_stack_node *lst)
 {
-	t_stack_node	*mouv;
+	t_stack_node	*key;
 
 	if (!lst)
 		return (NULL);
-	mouv = lst;
-	while (mouv->next)
+	key = lst;
+	while (key->next)
 	{
-		mouv = mouv->next;
+		key = key->next;
 	}
-	return (mouv);
+	return (key);
 }

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 23:29:49 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/06 01:17:14 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/08 10:58:26 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	push_node(t_stack_node **src, t_stack_node **dest)
 		return ;
 	first = *src;
 	*src = first->next;
+	first->prev = NULL;
 	first->next = *dest;
+	if (*dest)
+		(*dest)->prev = first;
 	*dest = first;
 }
 
