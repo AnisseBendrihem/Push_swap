@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/08 16:38:35 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/13 04:23:16 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,23 @@ void	sort_3(t_stack_node **a)
 void	sort_4(t_stack_node **a, t_stack_node **b)
 {
 	int	pos;
-	int	min;
+	int	size;
+	int	turn;
 
-	min = lst_find_min(*a);
-	pos = lst_position(*a, min);
-	if (pos <= ft_lstsize(*a) / 2)
-		while ((*a)->value != min)
+	pos = pos_min_idx(*a);
+	size = ft_lstsize(*a);
+	if (pos <= size / 2)
+	{
+		turn = pos;
+		while (turn--)
 			ra(a);
+	}
 	else
-		while ((*a)->value != min)
+	{
+		turn = size - pos;
+		while (turn--)
 			rra(a);
+	}
 	pb(a, b);
 	sort_3(a);
 	pa(a, b);
@@ -60,20 +67,30 @@ void	sort_4(t_stack_node **a, t_stack_node **b)
 void	sort_5(t_stack_node **a, t_stack_node **b)
 {
 	int	pos;
-	int	min;
+	int	size;
+	int	turn;
 
-	min = lst_find_min(*a);
-	pos = lst_position(*a, min);
-	if (pos <= ft_lstsize(*a) / 2)
-		while ((*a)->value != min)
+	pos = pos_min_idx(*a);
+	size = ft_lstsize(*a);
+	if (pos <= size / 2)
+	{
+		turn = pos;
+		while (turn--)
 			ra(a);
+	}
 	else
-		while ((*a)->value != min)
+	{
+		turn = size - pos;
+		while (turn--)
 			rra(a);
+	}
 	pb(a, b);
 	sort_4(a, b);
 	pa(a, b);
 }
+// void	ft_ultimate_sort(t_stack_node **a, t_stack_node **b)
+// {
+// }
 
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
@@ -89,7 +106,10 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	else if (i == 5)
 		sort_5(a, b);
 	else
-		ft_ultimate_sort(a, b);
+	{
+		ft_printf("finit\n");
+	}
+	// ft_ultimate_sort(a, b);
 	ft_lstclear(a);
 	ft_lstclear(b);
 }

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 17:57:02 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/08 15:14:22 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/13 00:18:58 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	fill_stack_and_check_overflow(char **tab, t_stack_node **a)
 		if (!security)
 			return (ft_lstclear(a), 0);
 		ft_lstadd_back(a, security);
-		lst_set_index(a);
 		i++;
 	}
 	return (i);
@@ -99,5 +98,6 @@ int	mother_parcing(int ac, char **av, t_stack_node **a)
 		return (1);
 	if (is_sorted(a))
 		return (1);
+	fill_index_sorted(a);
 	return (0);
 }

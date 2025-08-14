@@ -6,7 +6,7 @@
 #    By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:29:53 by abendrih          #+#    #+#              #
-#    Updated: 2025/08/06 02:35:39 by abendrih         ###   ########.fr        #
+#    Updated: 2025/08/09 09:43:52 by abendrih         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ LIBFT_LIB   = $(LIBFT_DIR)/libft.a
 SRC         = \
 	$(SRC_DIR)/main.c \
 	$(SRC_DIR)/push_swap.c \
-	$(SRC_DIR)/utils.c\
+	$(SRC_DIR)/utils.c \
+	$(SRC_DIR)/utils_2.c \
+	$(SRC_DIR)/utils_3.c \
 	$(PARSING_DIR)/parsing_1.c \
 	$(PARSING_DIR)/parsing_2.c \
 	$(RULES_DIR)/push_command.c \

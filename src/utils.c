@@ -6,54 +6,75 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 02:27:03 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/06 03:32:17 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/09 11:44:06 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	lst_find_min(t_stack_node *stack)
+void	sort_int_tab(int *tab, unsigned int size)
 {
-	t_stack_node	*key;
-	int				i;
+	int				tmp;
+	unsigned int	i;
+	unsigned int	j;
 
-	i = stack->value;
-	key = stack;
-	while (key)
+	i = 0;
+	if (size < 2)
+		return ;
+	while (i < size - 1)
 	{
-		if (i > key->value)
-			i = key->value;
-		key = key->next;
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
 	}
-	return (i);
 }
 
-void	lst_set_index(t_stack_node **stack)
+void	lst_to_tab(t_stack_node **src, int *dest)
 {
 	t_stack_node	*key;
 	int				i;
 
-	if (!stack || !(*stack))
-		return ;
-	key = *stack;
+	key = *src;
 	i = 0;
 	while (key)
 	{
-		key->index = i++;
+		dest[i] = key->value;
 		key = key->next;
+		i++;
 	}
 }
 
-int	lst_position(t_stack_node *stack, int value)
+void	fill_index_sorted(t_stack_node **a)
 {
-	t_stack_node	*key;
+	t_stack_node *key;
+	int *tab;
+	int len;
+	int i;
 
-	key = stack;
+	i = 0;
+	len = ft_lstsize(*a);
+	tab = malloc(sizeof(int) * len);
+	if (!tab)
+		return ;
+	lst_to_tab(a, tab);
+	sort_int_tab(tab, len);
+	key = *a;
 	while (key)
 	{
-		if (key->value == value)
-			return (key->index);
+		i = 0;
+		while (i < len && tab[i] != key->value)
+			i++;
+		key->index = i;
 		key = key->next;
 	}
-	return (-1);
+	free(tab);
 }
