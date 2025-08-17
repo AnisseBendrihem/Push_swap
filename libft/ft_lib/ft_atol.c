@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 21:40:09 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/06 03:40:29 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 22:47:08 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ long	ft_atol(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i] - '0';
+		if ((result * signe) > 2147483647 || (result * signe < -2147483648))
+			return (2147483649);
 		i++;
 	}
 	return (result * signe);
