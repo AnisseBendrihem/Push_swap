@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 17:24:54 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 19:27:31 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,24 @@ void	sort_5(t_stack_node **a, t_stack_node **b)
 	sort_4(a, b);
 	pa(a, b);
 }
-// void	ft_ultimate_sort(t_stack_node **a, t_stack_node **b)
-// {
-// }
+
+void	ft_ultimate_sort(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*node;
+
+	while (ft_lstsize(*a) > 3)
+		pb(a, b);
+	sort_3(a);
+	while (*b)
+	{
+		update_positions(*a, *b);
+		set_targets_for_b(*a, *b);
+		compute_costs(*a, *b);
+		node = pick_cheapest(*b);
+		do_rotations_and_pa(a, b, node->cost_a, node->cost_b);
+	}
+	final_align_min_to_top(a);
+}
 
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
@@ -106,9 +121,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	else if (i == 5)
 		sort_5(a, b);
 	else
-	{
 		ft_ultimate_sort(a, b);
-	}
 }
 
 /** TURK ALGO

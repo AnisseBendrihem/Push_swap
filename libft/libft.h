@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/08 07:17:33 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:53:09 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ typedef struct s_stack_node
 	int					index;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
+	// + champs pour l'algo Turk :
+	int pos;          // position actuelle (0 = top)
+	int above_median; // bool : pos <= size/2
+	int target_pos;   // position d'insertion dans A (pour un node de B)
+	int cost_a;       // coût signé pour amener target_pos en haut de A
+	int cost_b;       // coût signé pour amener ce node en haut de B
 }						t_stack_node;
 
 /* ************************************************************************** */

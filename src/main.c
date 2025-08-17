@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:50 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 17:25:38 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 19:21:27 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	}
 	if (!mother_parcing(ac, av, &a))
 		push_swap(&a, &b);
-	ft_lstclear(a);
-	ft_lstclear(b);
+	ft_lstclear(&a);
+	ft_lstclear(&b);
 	return (0);
 }
