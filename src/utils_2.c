@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:42:28 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/14 20:59:09 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 16:53:54 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,60 +85,4 @@ void	push_opening(t_stack_node **a, t_stack_node **b)
 			ra(a);
 	}
 	sort_3(a);
-}
-
-int	target_pos_in_a(t_stack_node *a, int b_idx)
-{
-	int				nb_min;
-	int				nb_max;
-	int				pos_min;
-	int				pos;
-	t_stack_node	*key;
-
-	if (!a)
-		return (0);
-	nb_min = a->index;
-	nb_max = a->index;
-	pos_min = 0;
-	pos = 1;
-	key = a->next;
-	while (key)
-	{
-		if (key->index < nb_min)
-		{
-			nb_min = key->index;
-			pos_min = pos;
-		}
-		if (key->index > nb_max)
-			nb_max = key->index;
-		pos++;
-		key = key->next;
-	}
-	if (b_idx < nb_min || b_idx > nb_max)
-		return (pos_min);
-	key = a;
-	pos = 0;
-	while (key)
-	{
-		if (key->index > b_idx)
-			return (pos);
-		pos++;
-		key = key->next;
-	}
-	return (pos_min);
-}
-
-// Coûts :
-
-int	rot_cost(int size, int pos)
-{
-}
-int	total_cost(int ca, int cb)
-{
-}
-void	turk_insert_all(t_stack_node **a, t_stack_node **b)
-{
-}
-void	final_align(t_stack_node **a)
-{
 }
