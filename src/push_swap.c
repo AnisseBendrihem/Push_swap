@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:29:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 19:27:31 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 19:55:37 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	ft_ultimate_sort(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*node;
 
+	// ouverture simple (rapide à coder)
 	while (ft_lstsize(*a) > 3)
 		pb(a, b);
 	sort_3(a);

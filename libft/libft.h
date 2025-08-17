@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:32:44 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 18:53:09 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 20:46:24 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,13 @@ typedef struct s_stack_node
 {
 	int					value;
 	int					index;
+	int					pos;
+	int					above_median;
+	int					target_pos;
+	int					cost_a;
+	int					cost_b;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-	// + champs pour l'algo Turk :
-	int pos;          // position actuelle (0 = top)
-	int above_median; // bool : pos <= size/2
-	int target_pos;   // position d'insertion dans A (pour un node de B)
-	int cost_a;       // coût signé pour amener target_pos en haut de A
-	int cost_b;       // coût signé pour amener ce node en haut de B
 }						t_stack_node;
 
 /* ************************************************************************** */
@@ -104,7 +103,6 @@ size_t					ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t					ft_strlcat(char *dst, char *src, size_t dstsize);
 char					*ft_strdup(char *src);
 char					*ft_strndup(char *src, size_t n);
-
 char					*ft_strchr(char *s, int c);
 char					*ft_strrchr(const char *s, int c);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
