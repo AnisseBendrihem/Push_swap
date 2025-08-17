@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 19:53:30 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 19:57:41 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 21:38:28 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void	compute_costs(t_stack_node *a, t_stack_node *b)
 {
 	int				size_a;
 	int				size_b;
-	t_stack_node	*cur;
+	t_stack_node	*key;
 
 	size_a = ft_lstsize(a);
 	size_b = ft_lstsize(b);
-	cur = b;
-	while (cur)
+	key = b;
+	while (key)
 	{
-		cur->cost_b = signed_cost(cur->pos, size_b);
-		cur->cost_a = signed_cost(cur->target_pos, size_a);
-		cur = cur->next;
+		key->cost_b = signed_cost(key->pos, size_b);
+		key->cost_a = signed_cost(key->target_pos, size_a);
+		key = key->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 19:52:36 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 19:57:50 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 21:42:48 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 int	find_target_pos_in_a(t_stack_node *a, int idx_b)
 {
-	t_stack_node	*cur;
+	t_stack_node	*key;
 	int				best_index;
 	int				best_pos;
 	int				pos;
 
-	cur = a;
+	key = a;
 	best_index = 2147483647;
 	best_pos = -1;
 	pos = 0;
-	while (cur)
+	while (key)
 	{
-		if (cur->index > idx_b)
+		if (key->index > idx_b)
 		{
-			if (cur->index < best_index)
+			if (key->index < best_index)
 			{
-				best_index = cur->index;
+				best_index = key->index;
 				best_pos = pos;
 			}
 		}
-		cur = cur->next;
+		key = key->next;
 		pos++;
 	}
 	if (best_pos != -1)
@@ -43,12 +43,12 @@ int	find_target_pos_in_a(t_stack_node *a, int idx_b)
 
 void	set_targets_for_b(t_stack_node *a, t_stack_node *b)
 {
-	t_stack_node	*cur;
+	t_stack_node	*key;
 
-	cur = b;
-	while (cur)
+	key = b;
+	while (key)
 	{
-		cur->target_pos = find_target_pos_in_a(a, cur->index);
-		cur = cur->next;
+		key->target_pos = find_target_pos_in_a(a, key->index);
+		key = key->next;
 	}
 }

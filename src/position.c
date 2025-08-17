@@ -6,7 +6,7 @@
 /*   By: abendrih <abendrih@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 19:52:09 by abendrih          #+#    #+#             */
-/*   Updated: 2025/08/17 19:58:07 by abendrih         ###   ########.fr       */
+/*   Updated: 2025/08/17 21:42:24 by abendrih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 void	update_positions(t_stack_node *a, t_stack_node *b)
 {
 	int				i;
-	t_stack_node	*cur;
+	t_stack_node	*key;
 
 	i = 0;
-	cur = a;
-	while (cur)
+	key = a;
+	while (key)
 	{
-		cur->pos = i;
+		key->pos = i;
 		i++;
-		cur = cur->next;
+		key = key->next;
 	}
 	i = 0;
-	cur = b;
-	while (cur)
+	key = b;
+	while (key)
 	{
-		cur->pos = i;
+		key->pos = i;
 		i++;
-		cur = cur->next;
+		key = key->next;
 	}
 }
